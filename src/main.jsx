@@ -11,7 +11,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Admin from './pages/admin/admin.jsx'
 //Component Page home
 import HomeShop from './pages/home/home.jsx'
-
+//Login Page
+import Login from './pages/client/Login/Login.jsx'
 
 //used for styles generals
 import './custom/gen/generalStyles.css'
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <Routes>
      <Route path="/" element={<HomeShop />} />
      <Route path="admin" element={<Admin />} />
+     <Route path="login" element={<Login />} />
     </Routes>
     </Router>
   </React.StrictMode>,

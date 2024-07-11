@@ -1,0 +1,33 @@
+.Login-box-ground{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+
+}
+
+.container-LG{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.068),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.281);
+}
+
+.section1{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+    background-color:  #8fa2f669;
+}
+.section1 h1{
+    font-size: calc(2em + 1vw);
+}
