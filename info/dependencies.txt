@@ -1,0 +1,7 @@
+-npm install react-router-dom
+-npm install Axios
+
+
+//  tailwind install --------------------------
+npm install -D tailwindcss
+npx tailwindcss init
