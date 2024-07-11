@@ -1,7 +1,6 @@
 .nav-admin{
-    width: 25%;
+    width: 20%;
     height: 80vh;
-    border: 1px solid rgba(0, 0, 0, 0.336);
     border-radius: 0px 20px 20px 0px;
     padding-top: 3.5%;
     padding-bottom: 3.5%;
@@ -9,8 +8,21 @@
     flex-direction: column;
     justify-content: space-around;
     gap: 10%;
+    box-shadow: 2px 2px 8px 5px rgba(0, 0, 0, 0.048);
+    margin-top: 2%;
+    transition: 0.5s;
+    /* */
 
 }
+.open-modal-nav{
+    transform: translateX(0px); 
+}
+.close-modal-nav{
+    transform: translateX(-400px); 
+}
+
+
+
 
 .nav-admin .Logo{
     width: 100%;
@@ -35,16 +47,60 @@
     }
 
 .actions-but-admin{
-    height: 70%;
+    height: 60%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.349);
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
     display: flex;
-    justify-content: center;
 }
 
 .btn-logout{
     width: 100%;
     height: 20%;
-    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
+.btnOptionAdmin{
+
+    display: flex;
+    width: 100%;
+    height: 40%;
+    justify-content: center;
+}
+.btn-logout .buttonsAdmin{
+    background-color: brown;
+    color: white;
+}
+
+.btn-logout .buttonsAdmin:hover{
+    background-color: rgb(104, 20, 20);
+    color: white;
+}
+
+
+
+@media (max-width: 1040px) {
+    .nav-admin{
+        width: 15%;
+        align-items: center;
+        padding: 0px;
+    }
+    .btnOptionAdmin p{
+        display: none;
+    }
+    .btnOptionAdmin i{
+       text-align: center;
+    }
+    .btn-logout .buttonsAdmin p{
+        display: none;
+    }
+
+
+
+
+
+}

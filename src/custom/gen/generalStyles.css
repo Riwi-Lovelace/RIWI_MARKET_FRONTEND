@@ -7,22 +7,29 @@
 
 .buttonsAdmin{
     width: 90%;
-    height: 20%;
+    height: 100%;
     display: flex;
-    border-radius: 30px;
+    border-radius: 60px;
     align-items: center;
-    font-size: calc(1.5em + 1vw);
+    font-size: calc(0.9em + 1vw);
     margin-top: 12px;
     text-align: center;
     padding-bottom: 1%;
     padding-left: 10%;
-    gap: 20%;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30%;
     cursor:pointer;
     transition: 0.3s;
+    gap: 20%;
 }
 
 .buttonsAdmin:hover{
-    background-color: rgba(219, 219, 219, 0.363);
+    background-color: rgba(219, 219, 219, 0.459);
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.068),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.144);
+
 }
 
 .buttonsAdmin:active{
@@ -31,6 +38,26 @@
 
 
 .select{
-    background-color: rgb(120, 88, 150);
-    color: rgb(62, 19, 102);
+    background-color:#C9AAFE;
+    color: #6E39CB;
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.068),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.144);
+}
+
+.select:hover{
+    background-color: rgb(152, 115, 185);
+}
+
+
+@media (max-width: 1040px) {
+    .buttonsAdmin{
+        justify-content: center;
+        font-size: calc(1em + 1.5vw);
+        padding-left: 25%;
+    }
+
+
+
+
 }

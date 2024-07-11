@@ -1,44 +1,59 @@
+import { useEffect, useState } from "react"
 
-import { useState } from "react"
+// Import Button component
+import { But } from '../buttons/buttomComponent.jsx'
 
-//Buttom component textFlexible
-import {But} from '../buttons/buttomComponent.jsx'
-
-//Imports styles from this component
+// Import styles from this component
 import './navAdddGeneral.css'
 
-//asset for logo 
+// Asset for logo 
 import imgage from '../../assets/logo/Logos.webp'
-// button reutilizable
-import {ButtonsAdmin} from '../../utils/interactiveButtons/buttons-intertive.jsx'
+
+// Reusable button component
+import { ButtonsAdmin } from '../../utils/interactiveButtons/buttons-intertive.jsx'
+
+export const NavAdmin = ({modalActived}) => {
+    const [activeButton, setActiveButton] = useState(null);
+
+    const [modalActive, SetmodalActive] = useState(true);
+
+    const handleButtonClick = (buttonName) => {
+        setActiveButton(prevButton => prevButton === buttonName ? null : buttonName);
+    };
+
+    useEffect(() => {
+    }, [activeButton]);
+
+    useEffect(() => {
+        SetmodalActive(modalActived == true);
+    }, [modalActived]);
 
 
+    const navAdminClassName = `nav-admin ${modalActive ? 'anotherClass' : ''} ${modalActive ? 'open-modal-nav' : 'close-modal-nav'}`;
 
-
-
-export const NavAdmin =()=>{
-
-    const [isPress,SetPress] = useState("disable");
-
-  
-
-    return(
-        <div className="nav-admin">
-                <div className='Logo'>
-                    <div className='image'>
-                        <img src={imgage} alt="" />
-                    </div>
+    return (
+        <div className={navAdminClassName}>
+            <div className='Logo'>
+                <div className='image'>
+                    <img src={imgage} alt="" />
                 </div>
-                <div className='actions-but-admin' onClick={userOptionGetClick}>
-                  
-                    <ButtonsAdmin icons = {<i class="fa-regular fa-user"></i>} text = "user" select = {isPress}  />
-                    
-
+            </div>
+            <div className='actions-but-admin'>
+                <div className="btnOptionAdmin btn-user" onClick={() => handleButtonClick("user")}>
+                    <ButtonsAdmin icons={<i className="fa-regular fa-user"></i>} text="user" select={activeButton === "user" ? "Active" : "disable"} />
                 </div>
-                <div className='btn-logout'>
-
+                <div className="btnOptionAdmin btn-carr" onClick={() => handleButtonClick("shop")}>
+                    <ButtonsAdmin icons={<i className="fa-solid fa-cart-shopping"></i>} text="Shop" select={activeButton === "shop" ? "Active" : "disable"} />
                 </div>
-
+                <div className="btnOptionAdmin btn-cont" onClick={() => handleButtonClick("contability")}>
+                    <ButtonsAdmin icons={<i className="fa-solid fa-box"></i>} text="Contability" select={activeButton === "contability" ? "Active" : "disable"} />
+                </div>
+            </div>
+            <div className='btn-logout'>
+                <div className="buttonsAdmin">
+                    <i className="fa-solid fa-right-from-bracket"></i><p>Logout</p>
+                </div>
+            </div>
         </div>
     )
 }

@@ -8,8 +8,8 @@ export const ButtonsAdmin = ({icons , text, select}) => {
 
 
     useEffect(() => {
-        select == "Active" ?  setActive(true) : setActive(false);
-      }, []);
+        setActive(select === "Active");
+    }, [select]);
 
     return(
         active ? (      
