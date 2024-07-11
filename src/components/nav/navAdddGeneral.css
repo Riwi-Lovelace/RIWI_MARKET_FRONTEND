@@ -1,0 +1,50 @@
+.nav-admin{
+    width: 25%;
+    height: 80vh;
+    border: 1px solid rgba(0, 0, 0, 0.336);
+    border-radius: 0px 20px 20px 0px;
+    padding-top: 3.5%;
+    padding-bottom: 3.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10%;
+
+}
+
+.nav-admin .Logo{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    }
+    .nav-admin .Logo .image{
+        width: 200px;
+        height: 120px;
+    
+        
+        }
+
+    .nav-admin .Logo img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+    }
+
+.actions-but-admin{
+    height: 70%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.349);
+    display: flex;
+    justify-content: center;
+}
+
+.btn-logout{
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+
