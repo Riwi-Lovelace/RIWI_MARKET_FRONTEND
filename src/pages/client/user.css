@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80vh;
+    height: 100%;
     box-shadow:
     inset 0 -3em 3em rgba(0, 0, 0, 0.068),
     0.3em 0.3em 1em rgba(0, 0, 0, 0.281);
@@ -26,8 +26,81 @@
     flex-direction: column;
     align-items: center;
     padding-top: 10%;
+    gap: 5%;
     background-color:  #8fa2f669;
 }
 .section1 h1{
     font-size: calc(2em + 1vw);
+}
+.box-input-user{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    justify-content: center;
+    padding-right: 10%;
+    gap: 10px;
+}
+.box-input-pass{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 10px;
+
+}
+
+.section1 input{
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 5%;
+}
+.but-ing-auth{
+    padding: 2%;
+    width: 60%;
+    border-radius: 12px;
+    border: none;
+    font-size: calc(0.5em + 1vw);
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.068),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.075);
+    background-color:  #6a67ffbb;
+    transition: 0.5s;
+    margin-top: 5%;
+}
+.but-ing-auth:hover{
+    background-color:  #b3b1ffbb;
+}
+.but-ing-auth:active{
+   transform: scale(1.02);
+}
+
+
+
+
+.section1 p{
+    font-size: calc(0.5em + 0.7vw);
+    margin-top: 5%;
+}
+
+.section1 a{
+    font-size: calc(0.5em + 1vw);
+    margin-top: 5%;
+    margin-bottom: 12px;
+}
+
+.section2{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+    gap: 5%;
+
 }

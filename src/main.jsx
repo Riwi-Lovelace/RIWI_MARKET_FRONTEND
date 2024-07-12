@@ -13,6 +13,8 @@ import Admin from './pages/admin/admin.jsx'
 import HomeShop from './pages/home/home.jsx'
 //Login Page
 import Login from './pages/client/Login/Login.jsx'
+//register page
+import Register from './pages/client/register/register.jsx'
 
 //used for styles generals
 import './custom/gen/generalStyles.css'
@@ -25,6 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <Route path="/" element={<HomeShop />} />
      <Route path="admin" element={<Admin />} />
      <Route path="login" element={<Login />} />
+     <Route path="register" element={<Register />} />
     </Routes>
     </Router>
   </React.StrictMode>,

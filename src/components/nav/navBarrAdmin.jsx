@@ -20,11 +20,9 @@ export const NavAdmin = ({modalActived,option}) => {
     const handleButtonClick = (buttonName) => {
         const newActiveButton = activeButton === buttonName ? null : buttonName;
         setActiveButton(newActiveButton);
-        if (option) {
-            option(newActiveButton);
+        if (option) {option(newActiveButton);
         }
     };
-
     useEffect(() => {
     }, [activeButton]);
 

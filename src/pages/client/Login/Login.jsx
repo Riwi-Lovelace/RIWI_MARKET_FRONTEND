@@ -17,6 +17,13 @@ const Login  = ()=>{
                             <label htmlFor="Password">Password</label>
                             <input type="password" name='Password'/>
                         </div>
+                        <button className='but-ing-auth'>Ingresar</button>
+                        
+                        <p>Or not Have a account?</p>
+                        <a href="/register">Register</a>
+                    </div>
+                    <div className='section2'>
+                        <img src="" alt="" />
                     </div>
                
             </div>
