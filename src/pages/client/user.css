@@ -104,3 +104,15 @@
     gap: 5%;
 
 }
+
+
+
+@media (max-width: 836px) {
+    .section2{
+        display: none;
+    }
+    .section1{
+       width: 100%
+       ;
+    }
+}
