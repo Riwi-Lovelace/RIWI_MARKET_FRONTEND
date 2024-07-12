@@ -1,0 +1,111 @@
+.modal-model-Login-box-ground {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+    border-radius: 20px;
+}
+
+.modal-model-container-LG {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    box-shadow:
+        inset 0 -3em 3em rgba(0, 0, 0, 0.068),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.281);
+    border-radius: 20px;
+}
+
+.modal-model-section1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+    gap: 5%;
+    background-color: #ffffff69;
+}
+
+.modal-model-section1 h1 {
+    font-size: calc(1em + 1vw);
+    margin-bottom: 12px;
+}
+
+.modal-model-box-input-user {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    justify-content: center;
+    padding-right: 10%;
+    gap: 10px;
+}
+
+.modal-model-box-input-pass {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 10px;
+}
+
+.modal-model-section1 input {
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 5%;
+}
+
+.modal-model-but-ing-auth {
+    padding: 2%;
+    width: 60%;
+    border-radius: 12px;
+    border: none;
+    font-size: calc(0.5em + 1vw);
+    box-shadow:
+        inset 0 -3em 3em rgba(0, 0, 0, 0.068),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.075);
+    background-color: #6a67ff52;
+    transition: 0.5s;
+    margin-top: 5%;
+}
+
+.modal-model-but-ing-auth:hover {
+    background-color: #b3b1ffbb;
+}
+
+.modal-model-but-ing-auth:active {
+    transform: scale(1.02);
+}
+
+.modal-model-section1 p {
+    font-size: calc(0.5em + 0.7vw);
+    margin-top: 5%;
+}
+
+.modal-model-section1 a {
+    font-size: calc(0.5em + 1vw);
+    margin-top: 5%;
+    margin-bottom: 12%;
+}
+
+.modal-model-section2 {
+    display: none;
+}
+
+@media (max-width: 836px) {
+    .modal-model-section2 {
+        display: none;
+    }
+    .modal-model-section1 {
+        width: 100%;
+    }
+}

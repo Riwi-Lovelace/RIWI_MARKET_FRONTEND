@@ -1,3 +1,6 @@
+import {ModalSesion} from '../../components/modals-sesions/modalLogin.jsx'
+import {ModalSesionRegister} from '../../components/modals-sesions/modalRegister.jsx'
+
 
 const HomeShop = ()=>{
     return(
@@ -8,7 +11,8 @@ const HomeShop = ()=>{
                 <a href="/login">Login</a>
             </div>
           
-
+            <ModalSesion active={false} />
+            <ModalSesionRegister activedRegister={false} />
 
         </div>
     )
