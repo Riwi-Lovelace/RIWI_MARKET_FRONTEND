@@ -12,13 +12,17 @@ import imgage from '../../assets/logo/Logos.webp'
 // Reusable button component
 import { ButtonsAdmin } from '../../utils/interactiveButtons/buttons-intertive.jsx'
 
-export const NavAdmin = ({modalActived}) => {
+export const NavAdmin = ({modalActived,option}) => {
     const [activeButton, setActiveButton] = useState(null);
 
     const [modalActive, SetmodalActive] = useState(true);
 
     const handleButtonClick = (buttonName) => {
-        setActiveButton(prevButton => prevButton === buttonName ? null : buttonName);
+        const newActiveButton = activeButton === buttonName ? null : buttonName;
+        setActiveButton(newActiveButton);
+        if (option) {
+            option(newActiveButton);
+        }
     };
 
     useEffect(() => {
@@ -26,7 +30,7 @@ export const NavAdmin = ({modalActived}) => {
 
     useEffect(() => {
         SetmodalActive(modalActived == true);
-    }, [modalActived]);
+    }, [modalActived,option]);
 
 
     const navAdminClassName = `nav-admin ${modalActive ? 'anotherClass' : ''} ${modalActive ? 'open-modal-nav' : 'close-modal-nav'}`;

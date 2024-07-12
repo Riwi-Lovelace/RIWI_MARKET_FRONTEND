@@ -5,8 +5,6 @@ export const ButtonsAdmin = ({icons , text, select}) => {
 
     
     const [active,setActive] = useState(false);
-
-
     useEffect(() => {
         setActive(select === "Active");
     }, [select]);
