@@ -1,3 +1,4 @@
+import { Header } from '../../components/header/Header.jsx';
 import {ModalSesion} from '../../components/modals-sesions/modalLogin.jsx'
 import {ModalSesionRegister} from '../../components/modals-sesions/modalRegister.jsx'
 
@@ -5,6 +6,7 @@ import {ModalSesionRegister} from '../../components/modals-sesions/modalRegister
 const HomeShop = ()=>{
     return(
         <div className="home-shop">
+            <Header />
             <h1>Home</h1>
             <div className="home-links">
                 <a href="/admin">admin</a>

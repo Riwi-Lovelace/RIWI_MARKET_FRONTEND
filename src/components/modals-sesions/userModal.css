@@ -7,6 +7,17 @@
     border-radius: 20px;
 }
 
+.modal-verifier-edit {
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%; 
+    max-height: 90%;
+    overflow: auto;
+}
+  
 .modal-model-container-LG {
     width: 80%;
     display: flex;
