@@ -4,7 +4,7 @@ import "../../components/header/headerStyles.css";
 // Logo riwi
 import logo from "../../assets/logo/Logos.webp";
 // Modal
-import { ModalSesion } from "../modals-sesions/modalLogin";
+import { ModalSesion } from "../modals-sesions/modalLogin.jsx";
 
 export const Header = () => {
 
@@ -26,6 +26,8 @@ export const Header = () => {
     setIsModalLoginOpen(!isModalLoginOpen);
     setIsUserFocused(!isUserFocused);
   };
+
+
 
   return (
     <header className="header">
