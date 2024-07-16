@@ -13,19 +13,40 @@ let SearchEd = "";
 
 export const Header = () => {
 
+    // Para abrir el modal de user
+  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
+
+         // Para que el icono del user cambie de color
+        const [isUserFocused, setIsUserFocused] = useState(false);
+
+
+  //---------------
+  // Para que el icono del carrito cambie de color
+  const [isCartFocused, setIsCartFocused] = useState(false);
+
+
+ 
+
+  useEffect(() => {
+    if(isModalLoginOpen){
+      setIsCartFocused(false)
+    }
+  
+    if(isCartFocused){
+      setIsModalLoginOpen(false)
+      setIsUserFocused(false)
+
+    }
+
+}, [isModalLoginOpen,isCartFocused]);
+  //------------------
+
   // Para abrir el menu hamburguesa
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // Para que el icono de la barra de busqueda cambie de color
   const [isSearchFocused, setIsSearchFocused] = useState(false);
-  // Para que el icono del carrito cambie de color
-  const [isCartFocused, setIsCartFocused] = useState(false);
-  // Para que el icono del user cambie de color
-  const [isUserFocused, setIsUserFocused] = useState(false);
-  // Para abrir el modal
-  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
-  // Para usar como referencia
-  const userLoginIconRef = useRef(null);
 
+  //-------------------------------------
   //guardar valor de busqueda escrito
   const [searched, SetSearched] = useState("");
 
@@ -86,7 +107,7 @@ export const Header = () => {
         <button
           onClick={handleLoginClick}
           className={`icon-btn user-btn ${isUserFocused ? "focused" : ""}`}
-          ref={userLoginIconRef}
+
         >
           <i className="fas fa-user icon user"></i>
         </button>
@@ -101,7 +122,6 @@ export const Header = () => {
       {isModalLoginOpen && (
         <ModalSesion
           active={isModalLoginOpen}
-          userIconRef={userLoginIconRef}
         />
       )}
     </header>
