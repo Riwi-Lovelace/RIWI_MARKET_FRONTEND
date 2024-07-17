@@ -15,6 +15,10 @@ import HomeShop from './pages/home/home.jsx'
 import Login from './pages/client/Login/Login.jsx'
 //register page
 import Register from './pages/client/register/register.jsx'
+//search Results Page
+import Search from './pages/res/resultsPage.jsx'
+
+
 
 //used for styles generals
 import './custom/gen/generalStyles.css'
@@ -29,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <Route path="admin" element={<Admin />} />
      <Route path="login" element={<Login />} />
      <Route path="register" element={<Register />} />
+     <Route path="search" element={<Search />} />
      <Route path='productCategories' element={<ProductCategorie />} />
     </Routes>
     </Router>

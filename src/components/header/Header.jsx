@@ -6,20 +6,43 @@ import logo from "../../assets/logo/Logos.webp";
 // Modal
 import { ModalSesion } from "../modals-sesions/modalLogin.jsx";
 
+
+let SearchEd = "";
+
 export const Header = () => {
+
+  // Para abrir el modal de user
+  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
+
+  // Para que el icono del user cambie de color
+  const [isUserFocused, setIsUserFocused] = useState(false);
+
+  //---------------
+  // Para que el icono del carrito cambie de color
+  const [isCartFocused, setIsCartFocused] = useState(false);
+
+  useEffect(() => {
+    if(isModalLoginOpen){
+      setIsCartFocused(false)
+    }
+  
+    if(isCartFocused){
+      setIsModalLoginOpen(false)
+      setIsUserFocused(false)
+
+    }
+
+  }, [isModalLoginOpen,isCartFocused]);
+  //------------------
 
   // Para abrir el menu hamburguesa
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // Para que el icono de la barra de busqueda cambie de color
   const [isSearchFocused, setIsSearchFocused] = useState(false);
-  // Para que el icono del carrito cambie de color
-  const [isCartFocused, setIsCartFocused] = useState(false);
-  // Para que el icono del user cambie de color
-  const [isUserFocused, setIsUserFocused] = useState(false);
-  // Para abrir el modal
-  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
-  // Para usar como referencia
-  const userLoginIconRef = useRef(null);
+
+  //-------------------------------------
+  //guardar valor de busqueda escrito
+  const [searched, SetSearched] = useState("");
 
   // Funcion para el icono del login
   const handleLoginClick = () => {
@@ -27,11 +50,21 @@ export const Header = () => {
     setIsUserFocused(!isUserFocused);
   };
 
-
-
+  //Logica para detectar enter y guardar la b
+  const keyPress = (event) => {
+    if (event.key === "Enter") {
+      SearchEd !== "" ? localStorage.setItem("search" , SearchEd): null;
+      window.location.href = "/search"
+    }
+  };
+  const handleChanged = (event) => {
+    SearchEd = event.target.value;
+    SetSearched(event.target.value);
+  
+    
+  };
   return (
     <header className="header">
-
       {/*Logo*/}
       <div className="logo">
         <a href="/">
@@ -47,6 +80,10 @@ export const Header = () => {
           className={isSearchFocused ? "focused" : ""}
           onFocus={() => setIsSearchFocused(true)}
           onBlur={() => setIsSearchFocused(false)}
+
+          //param of keypress
+              onChange={handleChanged}
+              onKeyDown={keyPress}
         />
         <i className={`fas fa-search search-icon ${isSearchFocused ? "focused-icon" : ""}`}></i>
       </div>
@@ -64,7 +101,7 @@ export const Header = () => {
         <button
           onClick={handleLoginClick}
           className={`icon-btn user-btn ${isUserFocused ? "focused" : ""}`}
-          ref={userLoginIconRef}
+
         >
           <i className="fas fa-user icon user"></i>
         </button>
@@ -79,7 +116,6 @@ export const Header = () => {
       {isModalLoginOpen && (
         <ModalSesion
           active={isModalLoginOpen}
-          userIconRef={userLoginIconRef}
         />
       )}
     </header>

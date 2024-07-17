@@ -55,7 +55,8 @@
 
 .search-bar input.focused {
   border-color: #9d66fd;
-  color: #9d66fd; 
+  color: #000 !important;
+
 }
 
 .search-icon.focused-icon {
