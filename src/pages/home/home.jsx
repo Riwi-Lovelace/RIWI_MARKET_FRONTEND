@@ -1,5 +1,6 @@
 import { Header } from '../../components/header/Header.jsx';
 import {ModalSesion} from '../../components/modals-sesions/modalLogin.jsx'
+import { ProductCategorie } from '../productCategories/ProductCategorie.jsx';
 
 
 
@@ -11,6 +12,7 @@ const HomeShop = ()=>{
             <div className="home-links">
                 <a href="/admin">admin</a>
                 <a href="/login">Login</a>
+                <a href="/productCategories">ProductCategories</a>
             </div>
           
             <ModalSesion active={false} />

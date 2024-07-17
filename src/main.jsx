@@ -18,6 +18,7 @@ import Register from './pages/client/register/register.jsx'
 
 //used for styles generals
 import './custom/gen/generalStyles.css'
+import { ProductCategorie } from './pages/productCategories/ProductCategorie.jsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <Route path="admin" element={<Admin />} />
      <Route path="login" element={<Login />} />
      <Route path="register" element={<Register />} />
+     <Route path='productCategories' element={<ProductCategorie />} />
     </Routes>
     </Router>
   </React.StrictMode>,
