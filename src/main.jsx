@@ -28,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
      <Router>
      <Routes>
+      
      <Route path="/" element={<HomeShop />} />
      <Route path="admin" element={<Admin />} />
      <Route path="login" element={<Login />} />

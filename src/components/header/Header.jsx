@@ -18,24 +18,17 @@ export const Header = () => {
 
          // Para que el icono del user cambie de color
         const [isUserFocused, setIsUserFocused] = useState(false);
-
-
   //---------------
   // Para que el icono del carrito cambie de color
   const [isCartFocused, setIsCartFocused] = useState(false);
-
-
- 
 
   useEffect(() => {
     if(isModalLoginOpen){
       setIsCartFocused(false)
     }
-  
     if(isCartFocused){
       setIsModalLoginOpen(false)
       setIsUserFocused(false)
-
     }
 
 }, [isModalLoginOpen,isCartFocused]);
@@ -66,8 +59,7 @@ export const Header = () => {
   const handleChanged = (event) => {
     SearchEd = event.target.value;
     SetSearched(event.target.value);
-  
-    
+
   };
   return (
     <header className="header">
