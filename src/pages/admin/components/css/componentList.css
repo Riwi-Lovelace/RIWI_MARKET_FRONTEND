@@ -1,0 +1,27 @@
+.list{
+    width: 90%;
+    height: auto;
+  
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+.list table{
+    width: 100%;
+    height: auto;
+    font-size: calc(0.2em + 1vw);
+    border: 1px solid black;
+}
+
+.list thead{
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    width: 100%;
+    background-color: rgb(143, 96, 187);
+    color: white;
+}
+
+
+.list tbody{
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    width: 100%;
+}

@@ -16,9 +16,11 @@
 }
 .open-modal-nav{
     transform: translateX(0px); 
+    display: flex;
 }
 .close-modal-nav{
-    transform: translateX(-400px); 
+    transform: translateX(-500px); 
+    width: 0%;
 }
 
 
