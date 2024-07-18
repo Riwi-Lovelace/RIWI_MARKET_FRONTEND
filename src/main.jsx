@@ -7,6 +7,9 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
+import './custom/private/definedStyles.css'
+
+
 //Componed Contructor Adming Page
 import Admin from './pages/admin/admin.jsx'
 //Component Page home
@@ -17,9 +20,6 @@ import Login from './pages/client/Login/Login.jsx'
 import Register from './pages/client/register/register.jsx'
 //search Results Page
 import Search from './pages/res/resultsPage.jsx'
-
-
-
 //used for styles generals
 import './custom/gen/generalStyles.css'
 

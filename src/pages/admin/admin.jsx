@@ -3,6 +3,8 @@ import {NavAdmin} from '../../components/nav/navBarrAdmin.jsx'
 
 import { useEffect, useState } from "react"
 
+import ModalAdminInfoComponent from '../../components/modals/modalAdminInfo.jsx'
+
 
 
 
@@ -25,6 +27,8 @@ const Admin = ()=>{
             <button onClick={active}>Active</button>
             
             <NavAdmin modalActived={activeModal} option={handleOptionMenue}/>
+
+            <ModalAdminInfoComponent/>
         </div>
     )
 }
