@@ -63,8 +63,9 @@ export const Header = () => {
   
     
   };
-  return (
-    <header className="header">
+  return ( 
+
+    <header className="header relative z-50">
       {/*Logo*/}
       <div className="logo">
         <a href="/">

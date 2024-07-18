@@ -1,0 +1,18 @@
+:root {
+    --blanco: #fff;
+    --primary-color: #6e39cb;
+    --secondary-color: #9d66fd;
+}
+
+.btn:hover {
+    color: var(--blanco);
+    background-color: var(--primary-color);
+}
+
+.btn .txt:hover {
+    color: var(--blanco);
+    background-color: var(--primary-color);
+}
+
+
+

@@ -18,12 +18,10 @@ import Register from './pages/client/register/register.jsx'
 //search Results Page
 import Search from './pages/res/resultsPage.jsx'
 
-
-
 //used for styles generals
 import './custom/gen/generalStyles.css'
-import { ProductCategorie } from './pages/productCategories/ProductCategorie.jsx';
 
+import { ProductCategorie } from './pages/productCategories/ProductCategorie.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
