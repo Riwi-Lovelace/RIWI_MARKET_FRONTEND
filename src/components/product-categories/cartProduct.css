@@ -1,0 +1,11 @@
+:root {
+    --blanco: #fff;
+    --primary-color: #6e39cb;
+    --secondary-color: #9d66fd;
+    --menu: #f2f2f2;
+}
+
+.carts {
+
+    border-radius: 20px;
+}
