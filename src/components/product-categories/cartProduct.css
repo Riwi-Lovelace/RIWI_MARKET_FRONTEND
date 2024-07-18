@@ -1,12 +1,50 @@
 :root {
-    --blanco: #fff;
-    --primary-color: #6e39cb;
-    --secondary-color: #9d66fd;
-    --menu: #f2f2f2;
-    
+  --blanco: #fff;
+  --primary-color: #6e39cb;
+  --secondary-color: #9d66fd;
+  --menu: #f2f2f2;
 }
 
 .carts {
+  font-size: calc(0.3em + 1vw);
+  height: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+  position: relative;
+  border-radius: 20px;
+  gap: 10px;
+}
 
-    border-radius: 20px;
+.carts img {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.continer-but {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.carts button {
+  width: 100%;
+  bottom: 20px;
+  padding: 2%;
+  position: absolute;
+  border-radius: 12px;
+}
+
+.carts h3 {
+  width: 100%;
+  font-size: calc(0.2em + 0.7vw) !important;
+}
+
+.carts p {
+  width: 100%;
+  font-size: calc(0.2em + 0.5vw) !important;
 }
