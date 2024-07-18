@@ -14,6 +14,9 @@ const Admin = ()=>{
 
     const listAdminSee = ["id","precio","nombre"]
 
+    const ValuesOfTable = ["1","1.20","Harol"]
+
+
     const [activeModal,SeActiveModal] = useState(false)
 
     //Logica para leer en que estado se encuentra el nav,la funcion hace retorno de la option
@@ -31,7 +34,7 @@ const Admin = ()=>{
               <h4>{statusMenue}</h4>
             <div className='container'>
                 <NavAdmin modalActived={activeModal} option={handleOptionMenue}/>
-                <List filasNumber={listAdminSee} arrayValues={[]} />
+                <List filasNumber={listAdminSee} arrayValues={ValuesOfTable} />
             </div>
            
 

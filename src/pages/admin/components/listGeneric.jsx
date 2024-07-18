@@ -8,10 +8,12 @@ export const List = ({filasNumber,arrayValues})=>{
 
 
     const [HeadTable, SetHeadTable] = useState([]);
+    const [valuesTable, SetvaluesTable] = useState([]);
 
     useEffect(() => {
         SetHeadTable(filasNumber)
-    }, [filasNumber]);
+        SetvaluesTable(arrayValues)
+    }, [filasNumber,valuesTable]);
 
     
     return(
@@ -26,9 +28,9 @@ export const List = ({filasNumber,arrayValues})=>{
             </thead>
             <tbody>
                 <tr>
-                    <th> Hola </th>
-                    <th> Hola </th>
-                    <th> Hola </th>
+                    {valuesTable.map((value, index) => (
+                        <th key={index}>{value}</th>
+                    ))}
                 </tr>
             </tbody>
         </table>
