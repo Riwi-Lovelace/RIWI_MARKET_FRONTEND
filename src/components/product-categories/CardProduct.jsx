@@ -13,7 +13,7 @@ export const CardProduct = ({ product }) => {
             <p className='text-sm mb-2 text-center'>{product.price}</p>
 
             <div className='bg-red-500'>
-              <button className='bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none '>ADD TO CART</button>
+              <button className='bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none'>ADD TO CART</button>
             </div>
         </div>
     </>

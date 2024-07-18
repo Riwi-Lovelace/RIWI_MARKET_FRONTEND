@@ -87,7 +87,7 @@ export const SidebarMenu = () => {
         ></i>
       </button>
       {openSection === "subcategory" && (
-        <div className="p-4 bg-gray-200 rounded-md mb-2">Jola</div>
+        <div className="p-4 bg-gray-200 rounded-md mb-2">Hola</div>
       )}
 
       {/** Brand */}

@@ -37,7 +37,7 @@ export const ProductCategorie = () => {
           <h2 className="text-3xl font-bold mb-4">
             Category <span className="text-gray-400">({products.length})</span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mx-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mx-8 ">
             {products.map((product, index) => (
               <CardProduct key={index} product={product} />
             ))}
