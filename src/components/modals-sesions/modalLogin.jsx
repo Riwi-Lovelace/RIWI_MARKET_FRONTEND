@@ -2,7 +2,16 @@
 import './userModal.css'
 import { useEffect, useState } from "react"
 
+import {ButRedirect} from '../buttons/buttom-redirects.jsx'
+
+
+
+
+
+
 export const ModalSesion =({active})=>{
+
+    let Link = '/login'
 
 
     const [modalActive, SetmodalActive] = useState(true);
@@ -19,26 +28,16 @@ export const ModalSesion =({active})=>{
         modalActive == true ? (
             <div className="modal-model-Login-box-ground     modal-verifier-edit">
                 <div className='modal-model-container-LG'>
-                <div className='modal-model-section1'>
-                    <h1>Login</h1>
-
-                    <div className='modal-model-box-input-user'>
-                    <label htmlFor="username">Username</label>
-                    <input type="text" name='username'/>
-                    </div>
-                <div className='modal-model-box-input-pass'>
-                    <label htmlFor="Password">Password</label>
-                    <input type="password" name='Password'/>
-                </div>
-                    <button className='modal-model-but-ing-auth'>Register</button>
-            
-                    <p>you don't Have a account?</p>
-                    <a href="/register">Register</a>
+                    <div className='modal-model-section1'>
+                        <h1>Login</h1> 
                     </div>
                         <div className='modal-model-section2'>
-                    <img src="" alt="" />
+                            <ButRedirect text ="iniciar Sesion" Link={Link} />
+                            <p>or your have a account?</p>
+                            <a href="/register">Register</a>
+                        </div>
+
                 </div>
-            </div>
             </div>
         ):(
              <div></div>

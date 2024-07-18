@@ -22,6 +22,45 @@
     transform: translateX(-500px); 
     width: 0%;
 }
+.nav-admin:focus {
+    outline: 2px solid rgba(0, 0, 0, 0); 
+    outline-offset: 1px;
+        .nav-admin::after{
+            display: flex;
+        }
+
+  }
+
+  .nav-admin::after{
+    content: " 'use' ↑↓";
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 20%;
+    height: 6%;
+    background-color: rgb(147, 127, 221);
+    box-shadow: 2px 2px 8px 5px rgba(0, 0, 0, 0.048);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    animation-name: opIndications;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    display: none;
+}
+
+@keyframes opIndications{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 
 
 

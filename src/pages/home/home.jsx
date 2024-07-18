@@ -1,6 +1,6 @@
 import { Header } from '../../components/header/Header.jsx';
 import {ModalSesion} from '../../components/modals-sesions/modalLogin.jsx'
-import {ModalSesionRegister} from '../../components/modals-sesions/modalRegister.jsx'
+
 
 
 const HomeShop = ()=>{
@@ -14,7 +14,6 @@ const HomeShop = ()=>{
             </div>
           
             <ModalSesion active={false} />
-            <ModalSesionRegister activedRegister={false} />
 
         </div>
     )

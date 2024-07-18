@@ -7,7 +7,13 @@
   width: 100%;
   height: 100px;
   position: relative;
+  transition: 0.4s;
+
+  
 }
+
+
+
 
 .logo {
   width: 15%;
@@ -49,7 +55,8 @@
 
 .search-bar input.focused {
   border-color: #9d66fd;
-  color: #9d66fd; 
+  color: #000 !important;
+
 }
 
 .search-icon.focused-icon {
@@ -128,9 +135,11 @@
   .search-bar.open,
   .icons.open {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     gap: 10px;
+    padding-top: 12px;
+    justify-content: center;
   }
 
   .header {
@@ -150,6 +159,29 @@
   .icon {
     font-size: 24px;
   }
+  .modal-model-container-LG{
+    background-color: white;
+    width: 100% !important;
+    z-index: 2000 !important;
+  }
+
+  .modal-model-section1 h1{
+    font-size: calc(1em + 1vw);
+  }
+
+  .modal-model-container-LG .btn-redirect{
+    width: 90%;
+    text-align: center;
+    font-size: calc(0.7em + 1vw);
+  }
+
+
+
+
+
+
+
+
 }
 
 .modal-model-Login-box-ground {
@@ -254,15 +286,4 @@
   margin-bottom: 12%;
 }
 
-.modal-model-section2 {
-  display: none;
-}
 
-@media (max-width: 836px) {
-  .modal-model-section2 {
-    display: none;
-  }
-  .modal-model-section1 {
-    width: 100%;
-  }
-}
