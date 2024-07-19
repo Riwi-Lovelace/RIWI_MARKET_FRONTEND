@@ -74,7 +74,7 @@ export const ProductCategorie = () => {
   return (
     <>
     <Header />
-      <div className="flex bg-gray-100">
+      <div className="flex bg-gray-100 p-1">
         {/*Se le pasa los props para filtrar el precio*/}
         <SidebarMenu minPrice={minPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} setMinPrice={setMinPrice} filterProduct={filterProduct} categories={categories} selectCategory={selectCategory} setSelectCategory={setSelectCategory} /> 
         <div className="w-full p-3 mt-5">
