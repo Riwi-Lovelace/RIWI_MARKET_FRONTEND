@@ -5,18 +5,18 @@ import "../../custom/private/definedStyles.css";
 export const CardProduct = ({ product }) => {
   return (
     <>
-      <div className="carts bg-gray-300 shadow-md  flex flex-col items-center">
+      <div className="carts bg-gray-400 shadow-md  flex flex-col items-center">
         <img
           src={product.image}
           alt={product.title}
-          className="object-hidden mb-4 "
+          className="object- mb-4 "
         />
 
-        <h3 className="text-lg  mb-2 text-left">{product.title}</h3>
-        <p className=" mb-2 text-left">Category: {product.title}</p>
-        <p className=" mb-2 text-center">{product.price}</p>
+        <h3 className="text-lg font-bold mb-1 text-left">{product.title}</h3>
+        <p><span className="font-bold">Category:</span> {product.category}</p>
+        <p className="font-bold price"><span className="font-bold">$$$ </span>{product.price}</p>
         <div className="continer-but">
-          <button className="bg-violet-500 ">ADD TO CART</button>
+          <button className="btn mb-4 h-6"><i class="fa-solid fa-cart-shopping text-white mr-4 "></i>ADD TO CART</button>
         </div>
       </div>
     </>

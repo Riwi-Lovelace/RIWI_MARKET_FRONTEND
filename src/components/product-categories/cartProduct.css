@@ -8,17 +8,36 @@
 .carts {
   font-size: calc(0.3em + 1vw);
   height: auto;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding: 2%;
   position: relative;
   border-radius: 20px;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Asegura el espacio entre elementos */
 }
 
 .carts img {
   width: 100%;
-  height: 250px;
+  height: 210px;
   border-radius: 20px;
+}
+
+.carts h3 {
+  width: 100%;
+  font-size: calc(0.2em + 0.7vw) !important;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.carts p {
+  width: 100%;
+  font-size: calc(0.2em + 0.5vw) !important;
+  text-align: left;
+}
+
+.carts .price {
+  color: #6e39cb;
 }
 
 .continer-but {
@@ -31,20 +50,25 @@
   margin-top: 12px;
 }
 
-.carts button {
-  width: 100%;
-  bottom: 20px;
-  padding: 2%;
-  position: absolute;
+.btn {
+  background-color: var(--primary-color);
+  color: var(--blanco);
+  border: none;
+  padding: 10px 20px;
   border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(0.2em + 0.5vw);
+  width: 95%;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
 }
 
-.carts h3 {
-  width: 100%;
-  font-size: calc(0.2em + 0.7vw) !important;
+.btn i {
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
 }
 
-.carts p {
-  width: 100%;
-  font-size: calc(0.2em + 0.5vw) !important;
+.btn:hover {
+  background-color: red;
 }
