@@ -46,7 +46,7 @@ export const SidebarMenu = ({minPrice,
 
       {/* Precio */}
       <button
-        className={`btn flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
+        className={`btn-menu flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
           openSection === "price" || clickedButton === "price" ? "active" : ""
         }`}
         onClick={() => toggleSection("price")}
@@ -70,7 +70,7 @@ export const SidebarMenu = ({minPrice,
         ></i>
       </button>
       {openSection === "price" && (
-        <div className="flex flex-col p-3 bg-gray-200 rounded-md ">
+        <div className="flex flex-col p-3 bg-gray-200 rounded-md mb-3 ">
 
           {/*Buscar el minPrice */}
           <label className="mb-1 text-gray-800 font-bold text-sm">Min Price: <span className="text-price">$ {minPrice}</span> </label>
@@ -84,7 +84,7 @@ export const SidebarMenu = ({minPrice,
 
       {/* Categoria */}
       <button
-        className={`btn flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
+        className={`btn-menu flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
           openSection === "category" || clickedButton === "category" ? "active" : ""
         }`}
         onClick={() => toggleSection("category")}
@@ -108,7 +108,7 @@ export const SidebarMenu = ({minPrice,
         ></i>
       </button>
       {openSection === "category" && (
-        <div className="p-4 bg-gray-200 rounded-md mb-2">
+        <div className="p-3 bg-gray-200 rounded-md mb-2 h-12">
           <select value={selectCategory} onChange={(e) => setSelectCategory(e.target.value)} className="w-full mb-2">
             <option value="">All Categorias</option>
               {categories.map((category, index) => {
@@ -121,7 +121,7 @@ export const SidebarMenu = ({minPrice,
 
       {/* Subcategoria */}
       <button
-        className={`btn flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
+        className={`btn-menu flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
           openSection === "subcategory" || clickedButton === "subcategory" ? "active" : ""
         }`}
         onClick={() => toggleSection("subcategory")}
@@ -151,7 +151,7 @@ export const SidebarMenu = ({minPrice,
 
       {/* Marca */}
       <button
-        className={`btn flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
+        className={`btn-menu flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
           openSection === "brand" || clickedButton === "brand" ? "active" : ""
         }`}
         onClick={() => toggleSection("brand")}
@@ -183,12 +183,12 @@ export const SidebarMenu = ({minPrice,
       <div className="flex justify-between ">
 
         {/**Eliminar */}
-        <button className="btn w-full p-4 bg-gray-300 rounded-md mr-2 h-10 text-sm font-bold text-center flex items-center justify-center">
+        <button className="btn-menu w-full p-4 bg-gray-300 text-gray-500 rounded-md mr-2 h-10 text-sm font-bold text-center flex items-center justify-center">
           Clear
         </button>
 
         {/**Buscar */}
-        <button className="btn w-full p-4 bg-gray-300 rounded-md h-10 text-sm font-bold text-center flex items-center justify-center">
+        <button className="btn-menu w-full p-4 bg-gray-300 text-gray-500 rounded-md h-10 text-sm font-bold text-center flex items-center justify-center">
           Search
         </button>
       </div>
