@@ -1,3 +1,74 @@
+:root {
+  --blanco: #fff;
+  --primary-color: #6e39cb;
+  --secondary-color: #9d66fd;
+  --menu: #f2f2f2;
+}
+
 .title {
-    margin-left: 12px;
+  margin-left: 12px;
+}
+
+.btn-filter {
+  background-color: var(--secondary-color);
+}
+
+.btn-filter:hover {
+  transition: background-color 0.4s;
+  background-color: var(--primary-color);
+}
+
+.btn-show {
+  background-color: var(--secondary-color);
+}
+
+.btn-show:hover {
+  transition: background-color 0.4s;
+  background-color: var(--primary-color);
+}
+
+/* ./product-categories/SidebarMenu.css */
+.menu-container {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Asegúrate de que el menú esté posicionado a la izquierda en pantallas medianas y grandes */
+@media (min-width: 768px) {
+  .sidebar-menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 250px; /* Ajusta el ancho según sea necesario */
+  }
+}
+
+/* Para pantallas más pequeñas, el menú ya debería estar en la parte superior */
+@media (max-width: 767px) {
+  .sidebar-menu {
+    position: static;
+  }
+}
+
+
+/* Esconder el menú en pantallas pequeñas cuando no se muestra */
+@media (max-width: 1024px) {
+  .menu-container {
+    margin-top: 10px;
+    transform: translateY(-100%);
+  }
+
+  .menu-container.show {
+    transform: translateY(0);
+  }
+}
+
+/* Asegurarse de que el menú siempre sea visible en pantallas grandes */
+@media (min-width: 1024px) {
+  .menu-container {
+    transform: none;
+  }
 }

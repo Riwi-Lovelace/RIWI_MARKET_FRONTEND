@@ -17,6 +17,8 @@ export const SidebarMenu = ({minPrice,
   const [activeButton, setActiveButton] = useState(null);
   // Estado para mantener el estilo del botón clicado
   const [clickedButton, setClickedButton] = useState(null);
+  // Estado para que el menu responsive
+  //const [showMenu, serShowMenu] = useState(false);
 
 
   // Función para el menu desplegable
@@ -42,7 +44,7 @@ export const SidebarMenu = ({minPrice,
   }
 
   return (
-    <div className="menu-cotainer p-4 mt-20 lg:w-80 rounded-lg ml-4">
+    <div className="menu-cotainer p-2 mt-20 lg:w-70 ml-2">
 
       {/* Precio */}
       <button

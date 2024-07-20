@@ -21,20 +21,17 @@
 
 .carts img {
   width: 100%;
-  height: 210px;
+  height: 90px;
   border-radius: 10px;
 }
 
 .carts h3 {
   width: 100%;
-  font-size: calc(0.2em + 0.7vw) !important;
   overflow-wrap: break-word;
 }
 
 .carts p {
   width: 100%;
-  font-size: calc(0.2em + 0.5vw) !important;
-
 }
 
 .carts .price {
