@@ -5,7 +5,7 @@ import { Header } from "../../components/header/Header";
 import { fetchCategories, fetchProducts } from "../../utils/api/fetchCategories";
 // Import Component de la card
 import { CardProduct } from "../../components/product-categories/CardProduct";
-// Import component menu desplegable
+// Import component meny desplegable
 import { SidebarMenu } from "../../components/product-categories/SidebarMenu";
 // Import Estilos
 import '../../custom/private/definedStyles.css'
@@ -22,7 +22,7 @@ export const ProductCategorie = () => {
   const [maxPrice, setMaxPrice] = useState(1000);
 
   // Categoria
-  const [categories, setCategories] = useState([]);
+  const [categories, setCatergories] = useState([]);
   const [selectCategory, setSelectCategory] = useState("");
 
   // Abrir menu responsive
@@ -46,17 +46,17 @@ export const ProductCategorie = () => {
     };
 
     // Para categorias
-    const getCategories = async () => {
+    const getCategory = async () => {
       try {
-        const categoriesFromApi = await fetchCategories();
-        setCategories(categoriesFromApi);
+        const categoryFromApi = await fetchCategories();
+        setCatergories(categoryFromApi);
       } catch (error) {
         console.error("Error fetching categories:", error.message);
       }
     }
 
     getProducts();
-    getCategories();
+    getCategory();
   }, []);
 
   // Funtion para filtrar los productos
@@ -67,15 +67,15 @@ export const ProductCategorie = () => {
       selectCategory,
     });
 
-    const filteredProducts = products.filter(
+    const filter = products.filter(
       product => 
         product.price >= minPrice && 
         product.price <= maxPrice && 
         (selectCategory === "" || product.category === selectCategory)
     );
 
-    console.log("Filtered products:", filteredProducts);
-    setFilterProductPrice(filteredProducts);
+    console.log("Filtered products:", filter);
+    setFilterProductPrice(filter);
   }
 
   // Función para manejar el botón "Ver más"
@@ -87,7 +87,7 @@ export const ProductCategorie = () => {
     <>
       <Header />
       <div className="flex flex-col md:flex-row lg:flex-row bg-gray-100 p-1">
-        <div className="sidebar-menu hidden md:block lg:block p-3">
+        <div className="hidden md:block lg:block p-3">
           {/* Se le pasa los props para filtrar el precio */}
           <SidebarMenu 
             minPrice={minPrice} 

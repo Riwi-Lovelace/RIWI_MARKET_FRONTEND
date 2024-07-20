@@ -36,29 +36,12 @@
 }
 
 
-/* Asegúrate de que el menú esté posicionado a la izquierda en pantallas medianas y grandes */
-@media (min-width: 768px) {
-  .sidebar-menu {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 250px; /* Ajusta el ancho según sea necesario */
-  }
-}
-
-/* Para pantallas más pequeñas, el menú ya debería estar en la parte superior */
-@media (max-width: 767px) {
-  .sidebar-menu {
-    position: static;
-  }
-}
-
 
 /* Esconder el menú en pantallas pequeñas cuando no se muestra */
 @media (max-width: 1024px) {
   .menu-container {
     margin-top: 10px;
-    transform: translateY(-100%);
+
   }
 
   .menu-container.show {

@@ -17,21 +17,14 @@ export const SidebarMenu = ({minPrice,
   const [activeButton, setActiveButton] = useState(null);
   // Estado para mantener el estilo del botón clicado
   const [clickedButton, setClickedButton] = useState(null);
-  // Estado para que el menu responsive
-  //const [showMenu, serShowMenu] = useState(false);
-
 
   // Función para el menu desplegable
   const toggleSection = (section) => {
-
     if (openSection === section) {
-
       setOpenSection(null);
       setActiveButton(null);
       setClickedButton(null);
-
     } else {
-
       setOpenSection(section);
       setActiveButton(section);
       setClickedButton(section);
@@ -40,11 +33,19 @@ export const SidebarMenu = ({minPrice,
 
   // Funtion para calcular el busqueda
   const handlerPrice = () => {
-    console.log("hola")
+    filterProduct();
+  }
+
+  // Funtion para limpiar los filtros
+  const handleClear = () => {
+    setMinPrice(0);
+    setMaxPrice(0);
+    setSelectCategory("");
+    filterProduct();
   }
 
   return (
-    <div className="menu-cotainer p-2 mt-20 lg:w-70 ml-2">
+    <div className="menu-container p-2 mt-20 md:w-50 lg:w-60 ml-2">
 
       {/* Precio */}
       <button
@@ -73,11 +74,9 @@ export const SidebarMenu = ({minPrice,
       </button>
       {openSection === "price" && (
         <div className="flex flex-col p-3 bg-gray-200 rounded-md mb-3 ">
-
           {/*Buscar el minPrice */}
           <label className="mb-1 text-gray-800 font-bold text-sm">Min Price: <span className="text-price">$ {minPrice}</span> </label>
           <input type="range" min="0" max="1000" value={minPrice} onChange={(e) => setMinPrice(Number(e.target.value))} className="mb-3"/>
-
           {/*Buscar el maxPrice */}
           <label className="mb-1 font-bold text-sm text-gray-800">Max Price: <span className="text-price">$ {maxPrice}</span></label>
           <input type="range" min="0" max="1000" value={maxPrice} onChange={(e) => setMaxPrice(Number(e.target.value))}/>
@@ -110,14 +109,13 @@ export const SidebarMenu = ({minPrice,
         ></i>
       </button>
       {openSection === "category" && (
-        <div className="p-3 bg-gray-200 rounded-md mb-2 h-12">
+        <div className="p-3 bg-gray-200 rounded-md mb-2">
           <select value={selectCategory} onChange={(e) => setSelectCategory(e.target.value)} className="w-full mb-2">
-            <option value="">All Categorias</option>
-              {categories.map((category, index) => {
-                <option key={index} value="category">{category}</option>
-              })}
+            <option value="">All Categories</option>
+            {categories.map((category, index) => (
+              <option key={index} value={category}>{category}</option>
+            ))}
           </select>
-
         </div>
       )}
 
@@ -148,6 +146,7 @@ export const SidebarMenu = ({minPrice,
       </button>
       {openSection === "subcategory" && (
         <div className="p-4 bg-gray-200 rounded-md mb-2">
+          {/* Subcategory content */}
         </div>
       )}
 
@@ -178,19 +177,25 @@ export const SidebarMenu = ({minPrice,
       </button>
       {openSection === "brand" && (
         <div className="p-4 bg-gray-200 rounded-md mb-2">
+          {/* Brand content */}
         </div>
       )}
 
       {/* Botones de Clear y Buscar */}
-      <div className="flex justify-between ">
-
-        {/**Eliminar */}
-        <button className="btn-menu w-full p-4 bg-gray-300 text-gray-500 rounded-md mr-2 h-10 text-sm font-bold text-center flex items-center justify-center">
+      <div className="flex justify-between">
+        {/* Eliminar */}
+        <button 
+          className="btn-menu w-full p-4 bg-gray-300 text-gray-500 rounded-md mr-2 h-10 text-sm font-bold text-center flex items-center justify-center"
+          onClick={handleClear}
+        >
           Clear
         </button>
 
-        {/**Buscar */}
-        <button className="btn-menu w-full p-4 bg-gray-300 text-gray-500 rounded-md h-10 text-sm font-bold text-center flex items-center justify-center">
+        {/* Buscar */}
+        <button 
+          className="btn-menu w-full p-4 bg-gray-300 text-gray-500 rounded-md h-10 text-sm font-bold text-center flex items-center justify-center"
+          onClick={handlerPrice}
+        >
           Search
         </button>
       </div>
