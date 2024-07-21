@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 // Import Header
 import { Header } from "../../components/header/Header";
 // Import Api
-import { fetchCategories, fetchProducts } from "../../utils/api/fetchCategories";
+import {
+  fetchCategories,
+  fetchProducts,
+} from "../../utils/api/fetchCategories";
 // Import Component de la card
 import { CardProduct } from "../../components/product-categories/CardProduct";
 // Import component meny desplegable
 import { SidebarMenu } from "../../components/product-categories/SidebarMenu";
 // Import Estilos
-import '../../custom/private/definedStyles.css'
-import '../../pages/productCategories/productCategory.css'
+import "../../custom/private/definedStyles.css";
+import "../../pages/productCategories/productCategory.css";
 
 export const ProductCategorie = () => {
   // El estado de los productos
@@ -53,7 +56,7 @@ export const ProductCategorie = () => {
       } catch (error) {
         console.error("Error fetching categories:", error.message);
       }
-    }
+    };
 
     getProducts();
     getCategory();
@@ -68,49 +71,50 @@ export const ProductCategorie = () => {
     });
 
     const filter = products.filter(
-      product => 
-        product.price >= minPrice && 
-        product.price <= maxPrice && 
+      (product) =>
+        product.price >= minPrice &&
+        product.price <= maxPrice &&
         (selectCategory === "" || product.category === selectCategory)
     );
 
     console.log("Filtered products:", filter);
     setFilterProductPrice(filter);
-  }
+  };
 
   // Función para manejar el botón "Ver más"
   const handleShowMore = () => {
-    setVisibleProducts(prevVisibleProducts => prevVisibleProducts + 10);
+    setVisibleProducts((prevVisibleProducts) => prevVisibleProducts + 10);
   };
 
   return (
     <>
       <Header />
-      <div className="flex flex-col md:flex-row lg:flex-row bg-gray-100 p-1">
-        <div className="hidden md:block lg:block p-3">
+      <div className="flex flex-col md:flex-row lg:flex-row bg-gray-200 p-1">
+        <div className="hidden md:block  lg:block p-3">
           {/* Se le pasa los props para filtrar el precio */}
-          <SidebarMenu 
-            minPrice={minPrice} 
-            maxPrice={maxPrice} 
-            setMaxPrice={setMaxPrice} 
-            setMinPrice={setMinPrice} 
-            filterProduct={filterProduct} 
-            categories={categories} 
-            selectCategory={selectCategory} 
-            setSelectCategory={setSelectCategory} 
-          /> 
+          <SidebarMenu
+            minPrice={minPrice}
+            maxPrice={maxPrice}
+            setMaxPrice={setMaxPrice}
+            setMinPrice={setMinPrice}
+            filterProduct={filterProduct}
+            categories={categories}
+            selectCategory={selectCategory}
+            setSelectCategory={setSelectCategory}
+          />
         </div>
 
         <div className="w-full p-3 mt-5">
           <h2 className="title text-3xl font-bold mb-6">
-            All products <span className="text-gray-400">({filterProductPrice.length})</span>
+            All products{" "}
+            <span className="text-gray-400">({filterProductPrice.length})</span>
           </h2>
 
           <button
             className="btn-filter text-white font-bold p-2 rounded-md ml-2 mb-4 md:hidden"
             onClick={() => setShowMenu(!showMenu)}
           >
-            Filter 
+            Filter
             <i className="ml-2 fa-solid fa-sliders"></i>
           </button>
           {showMenu && (
@@ -129,10 +133,12 @@ export const ProductCategorie = () => {
           )}
 
           {/* Las cards que se van a renderizar */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8 mx-2">
-            {filterProductPrice.slice(0, visibleProducts).map((product, index) => (
-              <CardProduct key={index} product={product} />
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8 mx-2">
+            {filterProductPrice
+              .slice(0, visibleProducts)
+              .map((product, index) => (
+                <CardProduct key={index} product={product} />
+              ))}
           </div>
 
           {visibleProducts < filterProductPrice.length && (
