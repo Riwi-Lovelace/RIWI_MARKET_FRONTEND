@@ -12,14 +12,14 @@ export const SidebarMenu = ({
   selectCategory,
   setSelectCategory,
 }) => {
-  // Estado para abrir el menu desplegable
+  // State to manage the open section of the dropdown menu
   const [openSection, setOpenSection] = useState(null);
-  // Estado para activar el icono del boton (la flechita)
+  // State to activate the button icon (arrow)
   const [activeButton, setActiveButton] = useState(null);
-  // Estado para mantener el estilo del botón clicado
+  // State to maintain the style of the clicked button
   const [clickedButton, setClickedButton] = useState(null);
 
-  // Función para el menu desplegable
+  // Function to toggle the dropdown menu section
   const toggleSection = (section) => {
     if (openSection === section) {
       setOpenSection(null);
@@ -32,12 +32,12 @@ export const SidebarMenu = ({
     }
   };
 
-  // Funtion para calcular el busqueda
+  // Function to handle the price filter search
   const handlerPrice = () => {
     filterProduct();
   };
 
-  // Funtion para limpiar los filtros
+  // Function to clear all filters
   const handleClear = () => {
     setMinPrice(0);
     setMaxPrice(0);
@@ -47,7 +47,7 @@ export const SidebarMenu = ({
 
   return (
     <div className="menu-container p-2 mt-20 md:w-60 lg:w-60 ml-2">
-      {/* Precio */}
+      {/* Price section button */}
       <button
         className={`btn-menu flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
           openSection === "price" || clickedButton === "price" ? "active" : ""
@@ -82,11 +82,12 @@ export const SidebarMenu = ({
           }`}
         ></i>
       </button>
+      {/* Price range inputs */}
       {openSection === "price" && (
-        <div className="flex flex-col p-3 bg-gray-200 rounded-md mb-3 ">
-          {/*Buscar el minPrice */}
+        <div className="flex flex-col p-3 bg-gray-200 rounded-md mb-3">
+          {/* Min Price */}
           <label className="mb-2 text-gray-800 font-bold text-sm">
-            Min Price: <span className="text-price">$ {minPrice}</span>{" "}
+            Min Price: <span className="text-price">$ {minPrice}</span>
           </label>
           <input
             type="range"
@@ -96,7 +97,7 @@ export const SidebarMenu = ({
             onChange={(e) => setMinPrice(Number(e.target.value))}
             className="mb-3"
           />
-          {/*Buscar el maxPrice */}
+          {/* Max Price */}
           <label className="mb-2 font-bold text-sm text-gray-800">
             Max Price: <span className="text-price">$ {maxPrice}</span>
           </label>
@@ -110,7 +111,7 @@ export const SidebarMenu = ({
         </div>
       )}
 
-      {/* Categoria */}
+      {/* Category section button */}
       <button
         className={`btn-menu flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
           openSection === "category" || clickedButton === "category"
@@ -121,7 +122,7 @@ export const SidebarMenu = ({
       >
         <div>
           <i
-            className={`fa-solid fa-dollar-sign mr-2 ${
+            className={`fa-solid fa-tags mr-2 ${
               openSection === "category" || clickedButton === "category"
                 ? "text-white"
                 : "text-gray-500"
@@ -147,6 +148,7 @@ export const SidebarMenu = ({
           }`}
         ></i>
       </button>
+      {/* Category dropdown */}
       {openSection === "category" && (
         <div className="p-3 bg-gray-200 rounded-md mb-2">
           <select
@@ -164,7 +166,7 @@ export const SidebarMenu = ({
         </div>
       )}
 
-      {/* Subcategoria */}
+      {/* Subcategory section button */}
       <button
         className={`btn-menu flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
           openSection === "subcategory" || clickedButton === "subcategory"
@@ -175,7 +177,7 @@ export const SidebarMenu = ({
       >
         <div>
           <i
-            className={`fa-solid fa-dollar-sign mr-2 ${
+            className={`fa-solid fa-tags mr-2 ${
               openSection === "subcategory" || clickedButton === "subcategory"
                 ? "text-white"
                 : "text-gray-500"
@@ -201,13 +203,14 @@ export const SidebarMenu = ({
           }`}
         ></i>
       </button>
+      {/* Subcategory content */}
       {openSection === "subcategory" && (
         <div className="p-4 bg-gray-200 rounded-md mb-2">
           {/* Subcategory content */}
         </div>
       )}
 
-      {/* Marca */}
+      {/* Brand section button */}
       <button
         className={`btn-menu flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
           openSection === "brand" || clickedButton === "brand" ? "active" : ""
@@ -216,7 +219,7 @@ export const SidebarMenu = ({
       >
         <div>
           <i
-            className={`fa-solid fa-dollar-sign mr-2 ${
+            className={`fa-solid fa-tags mr-2 ${
               openSection === "brand" || clickedButton === "brand"
                 ? "text-white"
                 : "text-gray-500"
@@ -242,15 +245,16 @@ export const SidebarMenu = ({
           }`}
         ></i>
       </button>
+      {/* Brand content */}
       {openSection === "brand" && (
         <div className="p-4 bg-gray-200 rounded-md mb-2">
           {/* Brand content */}
         </div>
       )}
 
-      {/* Botones de Clear y Buscar */}
+      {/* Clear and Search buttons */}
       <div className="flex justify-between">
-        {/* Eliminar */}
+        {/* Clear filters button */}
         <button
           className="btn-menu w-full p-4 bg-gray-300 text-gray-500 rounded-md mr-2 h-10 text-sm font-bold text-center flex items-center justify-center"
           onClick={handleClear}
@@ -258,7 +262,7 @@ export const SidebarMenu = ({
           Clear
         </button>
 
-        {/* Buscar */}
+        {/* Search button */}
         <button
           className="btn-menu w-full p-4 bg-gray-300 text-gray-500 rounded-md h-10 text-sm font-bold text-center flex items-center justify-center"
           onClick={handlerPrice}
