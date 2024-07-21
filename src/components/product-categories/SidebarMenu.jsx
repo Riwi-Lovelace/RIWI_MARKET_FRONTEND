@@ -46,7 +46,8 @@ export const SidebarMenu = ({
   };
 
   return (
-    <div className="menu-container p-2 mt-20 md:w-60 lg:w-60 ml-2">
+    <div className="menu-container p-2 mt-20 md:w-60 lg:w-860 ml-2">
+
       {/* Price section button */}
       <button
         className={`btn-menu flex justify-between items-center w-full p-4 bg-gray-300 rounded-md mb-3 h-10 ${
@@ -82,6 +83,7 @@ export const SidebarMenu = ({
           }`}
         ></i>
       </button>
+
       {/* Price range inputs */}
       {openSection === "price" && (
         <div className="flex flex-col p-3 bg-gray-200 rounded-md mb-3">
@@ -122,7 +124,7 @@ export const SidebarMenu = ({
       >
         <div>
           <i
-            className={`fa-solid fa-tags mr-2 ${
+            className={`fa-solid fa-grip-vertical mr-2 ${
               openSection === "category" || clickedButton === "category"
                 ? "text-white"
                 : "text-gray-500"
@@ -148,6 +150,7 @@ export const SidebarMenu = ({
           }`}
         ></i>
       </button>
+
       {/* Category dropdown */}
       {openSection === "category" && (
         <div className="p-3 bg-gray-200 rounded-md mb-2">
@@ -177,7 +180,7 @@ export const SidebarMenu = ({
       >
         <div>
           <i
-            className={`fa-solid fa-tags mr-2 ${
+            className={`fa-solid fa-layer-group mr-2 ${
               openSection === "subcategory" || clickedButton === "subcategory"
                 ? "text-white"
                 : "text-gray-500"
@@ -219,7 +222,7 @@ export const SidebarMenu = ({
       >
         <div>
           <i
-            className={`fa-solid fa-tags mr-2 ${
+            className={`fa-regular fa-square-check mr-2 ${
               openSection === "brand" || clickedButton === "brand"
                 ? "text-white"
                 : "text-gray-500"

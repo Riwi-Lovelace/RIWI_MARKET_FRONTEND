@@ -27,9 +27,3 @@
   background-color: var(--primary-color);
 }
 
-.menu-container {
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out;
-}
