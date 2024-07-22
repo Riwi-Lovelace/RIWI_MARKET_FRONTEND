@@ -17,20 +17,16 @@ export const SearchRed = ()=>{
   };
   const handleChanged = (event) => {
     SearchEd = event.target.value;
-    SetSearched(event.target.value);
 
   };
 
-        
+    
     return(
         <div className="input-box">
         <input
           type="text"
           placeholder="Search"
           className="inputSearchGeneric"
-          onFocus={() => setIsSearchFocused(true)}
-          onBlur={() => setIsSearchFocused(false)}
-
           //param of keypress
               onChange={handleChanged}
               onKeyDown={keyPress}
