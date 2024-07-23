@@ -7,8 +7,6 @@ import logo from "../../assets/logo/Logos.webp";
 import { ModalSesion } from "../modals-sesions/modalLogin.jsx";
 
 
-
-
 let SearchEd = "";
 
 export const Header = () => {
@@ -83,7 +81,7 @@ export const Header = () => {
               onChange={handleChanged}
               onKeyDown={keyPress}
         />
-        <i className={`fas fa-search search-icon ${isSearchFocused ? "focused-icon" : ""}`}></i>
+         <i className={`fas fa-search search-icon ${isSearchFocused ? "focused-icon" : ""}`}></i>
       </div>
 
       {/*Iconos del carrito y user*/}
