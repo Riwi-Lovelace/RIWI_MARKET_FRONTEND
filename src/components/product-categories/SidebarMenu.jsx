@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import "./../product-categories/SidebarMenu.css";
 import "../../custom/private/definedStyles.css";
 
-export const SidebarMenu = ({
-  minPrice,
-  maxPrice,
-  setMinPrice,
-  setMaxPrice,
-  filterProduct,
-  categories,
-  selectCategory,
-  setSelectCategory,
-}) => {
+export const SidebarMenu = ({ minPrice,
+                              maxPrice,
+                              setMinPrice,
+                              setMaxPrice,
+                              filterProduct,
+                              categories,
+                              selectCategory,
+                              setSelectCategory }) => {
+
   // State to manage the open section of the dropdown menu
   const [openSection, setOpenSection] = useState(null);
   // State to activate the button icon (arrow)
@@ -21,10 +20,13 @@ export const SidebarMenu = ({
 
   // Function to toggle the dropdown menu section
   const toggleSection = (section) => {
+
     if (openSection === section) {
+
       setOpenSection(null);
       setActiveButton(null);
       setClickedButton(null);
+
     } else {
       setOpenSection(section);
       setActiveButton(section);
@@ -39,6 +41,7 @@ export const SidebarMenu = ({
 
   // Function to clear all filters
   const handleClear = () => {
+
     setMinPrice(0);
     setMaxPrice(0);
     setSelectCategory("");
@@ -46,7 +49,7 @@ export const SidebarMenu = ({
   };
 
   return (
-    <div className="menu-container p-2 mt-20 md:w-60 lg:w-860 ml-2 bg-gray-200">
+    <div className="menu-container p-2 mt-20 md:w-60 lg:w-860 ml-2 bg-gray-500">
 
       {/* Price section button */}
       <button
@@ -65,11 +68,7 @@ export const SidebarMenu = ({
           ></i>
           <span
             className={`font-bold text-sm ${
-              openSection === "price" || clickedButton === "price"
-                ? "text-white"
-                : "text-gray-500"
-            }`}
-          >
+              openSection === "price" || clickedButton === "price" ? "text-white" : "text-gray-500"}`}>
             Price
           </span>
         </div>
@@ -77,11 +76,7 @@ export const SidebarMenu = ({
           className={`fa-solid ${
             openSection === "price" ? "fa-caret-down" : "fa-caret-right"
           } ${
-            openSection === "price" || clickedButton === "price"
-              ? "text-white"
-              : "text-gray-500"
-          }`}
-        ></i>
+            openSection === "price" || clickedButton === "price" ? "text-white" : "text-gray-500"}`}></i>
       </button>
 
       {/* Price range inputs */}

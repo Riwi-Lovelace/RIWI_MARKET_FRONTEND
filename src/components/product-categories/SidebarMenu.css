@@ -46,7 +46,7 @@ input[type="range"] {
 }
 
 .menu-container {
-  margin-top: 20%;
+  margin-top: 30%;
   margin-bottom: 0%;
 }
 
@@ -75,7 +75,11 @@ input[type="range"]::-moz-range-thumb {
 /* Esconder el menú en pantallas pequeñas */
 @media (max-width: 767px) {
   .menu-container {
-    transform: translateY(-100%);
+
+      margin-top: 2%;
+      margin-bottom: 5%;
+
+    transform: translateY(0);
   }
 
   .menu-container.show {
@@ -88,5 +92,4 @@ input[type="range"]::-moz-range-thumb {
   .menu-container {
     transform: none;
   }
- 
 }

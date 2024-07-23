@@ -6,23 +6,21 @@ import CardProduct from "../../components/product-categories/CardProduct";
 import { SidebarMenu } from "../../components/product-categories/SidebarMenu";
 
 // Import API functions
-import {
-  fetchCategories,
-  fetchProducts,
-} from "../../utils/api/fetchCategories";
+import { fetchCategories, fetchProducts } from "../../utils/api/fetchCategories";
 
 // Import styles
 import "../../custom/private/definedStyles.css";
 import "../../pages/productCategories/productCategory.css";
 
 export const ProductCategorie = () => {
+
   // States
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectCategory, setSelectCategory] = useState("");
 
   const [showMenu, setShowMenu] = useState(false);
   const [visibleProducts, setVisibleProducts] = useState(10);
@@ -52,7 +50,7 @@ export const ProductCategorie = () => {
       (product) =>
         product.price >= minPrice &&
         product.price <= maxPrice &&
-        (selectedCategory === "" || product.category === selectedCategory)
+        (selectCategory === "" || product.category === selectCategory)
     );
     setFilteredProducts(filtered);
   };
@@ -68,16 +66,16 @@ export const ProductCategorie = () => {
       <div className="flex flex-col md:flex-row lg:flex-row bg-gray-200 p-1">
         {/* Sidebar Menu for large screens */}
         <div className="hidden md:block lg:block p-3">
-          <SidebarMenu
-            minPrice={minPrice}
-            maxPrice={maxPrice}
-            setMinPrice={setMinPrice}
-            setMaxPrice={setMaxPrice}
-            filterProduct={filterProducts}
-            categories={categories}
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-          />
+            <SidebarMenu
+              minPrice={minPrice}
+              maxPrice={maxPrice}
+              setMinPrice={setMinPrice}
+              setMaxPrice={setMaxPrice}
+              filterProduct={filterProducts}
+              categories={categories}
+              selectCategory={selectCategory}
+              setSelectCategory={setSelectCategory}
+            />
         </div>
 
         {/* Main content */}
@@ -106,8 +104,8 @@ export const ProductCategorie = () => {
                 setMaxPrice={setMaxPrice}
                 filterProduct={filterProducts}
                 categories={categories}
-                selectedCategory={selectedCategory}
-                setSelectedCategory={setSelectedCategory}
+                selectCategory={selectCategory}
+                setSelectCategory={setSelectCategory}
               />
             </div>
           )}
@@ -126,8 +124,7 @@ export const ProductCategorie = () => {
             <div className="flex justify-center mt-4">
               <button
                 className="btn-show font-bold text-white px-4 py-2 rounded-lg"
-                onClick={handleShowMore}
-              >
+                onClick={handleShowMore}>
                 See more
               </button>
             </div>
