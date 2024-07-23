@@ -17,7 +17,7 @@ const CardProduct = ({ product }) => {
       />
 
       {/* Display product title */}
-      <h3 className="text-lg sm:text-sm md:text-sm lg:text-base font-bold mb-1">
+      <h3 className="text-lg sm:text- md:text-sm lg:text-base font-bold mb-1">
         {title}
       </h3>
 
@@ -37,7 +37,7 @@ const CardProduct = ({ product }) => {
 
       {/* Button to add the product to the cart */}
       <div className="continer-but">
-        <button className="btn-cart mb-4 h-8 font-bold lg:text-sm md:text-sm sm:text-sm">
+        <button className="btn-cart btn-text mb-4 h-8 font-bold md:text-sm lg:text-base">
           <i className="fa-solid fa-cart-shopping text-white mr-4"></i>
           ADD TO CART
         </button>

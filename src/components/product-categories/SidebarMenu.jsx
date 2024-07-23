@@ -46,7 +46,7 @@ export const SidebarMenu = ({
   };
 
   return (
-    <div className="menu-container p-2 mt-20 md:w-60 lg:w-860 ml-2">
+    <div className="menu-container p-2 mt-20 md:w-60 lg:w-860 ml-2 bg-gray-200">
 
       {/* Price section button */}
       <button

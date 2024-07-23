@@ -23,6 +23,7 @@ export const ProductCategorie = () => {
   const [maxPrice, setMaxPrice] = useState(1000);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+
   const [showMenu, setShowMenu] = useState(false);
   const [visibleProducts, setVisibleProducts] = useState(10);
 
@@ -32,7 +33,7 @@ export const ProductCategorie = () => {
       try {
         const [productsFromApi, categoriesFromApi] = await Promise.all([
           fetchProducts(),
-          fetchCategories()
+          fetchCategories(),
         ]);
         setProducts(productsFromApi);
         setFilteredProducts(productsFromApi);
@@ -47,17 +48,18 @@ export const ProductCategorie = () => {
 
   // Filter products based on price and category
   const filterProducts = () => {
-    const filtered = products.filter(product =>
-      product.price >= minPrice &&
-      product.price <= maxPrice &&
-      (selectedCategory === "" || product.category === selectedCategory)
+    const filtered = products.filter(
+      (product) =>
+        product.price >= minPrice &&
+        product.price <= maxPrice &&
+        (selectedCategory === "" || product.category === selectedCategory)
     );
     setFilteredProducts(filtered);
   };
 
   // Show more products
   const handleShowMore = () => {
-    setVisibleProducts(prev => prev + 10);
+    setVisibleProducts((prev) => prev + 10);
   };
 
   return (
@@ -88,7 +90,7 @@ export const ProductCategorie = () => {
           {/* Filter button for mobile screens */}
           <button
             className="btn-filter text-white font-bold p-2 rounded-md ml-2 mb-4 md:hidden"
-            onClick={() => setShowMenu(prev => !prev)}
+            onClick={() => setShowMenu((prev) => !prev)}
           >
             Filter
             <i className="ml-2 fa-solid fa-sliders"></i>

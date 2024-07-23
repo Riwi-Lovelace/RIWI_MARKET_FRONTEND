@@ -6,7 +6,7 @@
 }
 
 .carts {
-  font-size: calc(0.3em + 1vw);
+  font-size: calc(2em + 5vw);
   height: auto;
   padding: 2%;
   box-shadow: 10px 3px 8px rgba(43, 43, 43, 0.199);
@@ -28,10 +28,12 @@
 .carts h3 {
   width: 100%;
   overflow-wrap: break-word;
+  /*font-size: calc(0.2em + 0.7vw) !important;*/
 }
 
 .carts p {
   width: 100%;
+  /*font-size: calc(0.2em + 0.7vw) !important;*/
 }
 
 .carts .price {
@@ -57,7 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(0.2em + 0.5vw);
+  font-size: calc(0.1em + 0.1vw) !important;
   width: 90%;
   box-shadow: 4px 3px 5px rgba(145, 145, 145, 0.267);
   box-sizing: border-box;
@@ -68,7 +70,34 @@
   margin-right: 8px;
 }
 
+
+
 .btn-cart:hover {
   background-color: var(--primary-color);
   transition: background-color 0.4s ease;
+}
+
+/* Mostrar el menú en pantallas medianas y grandes */
+@media (max-width: 1048px) {
+  .btn-text {
+    font-size: 8px !important;
+  }
+}
+
+@media (max-width: 1008px) {
+  .btn-text {
+    font-size: 8px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .btn-text {
+    font-size: calc(0.2em + 0.7vw) !important;
+  }
+}
+
+@media (max-width: 402px) {
+  .btn-text {
+    font-size: calc(0.2em + 0.5vw) !important;
+  }
 }
