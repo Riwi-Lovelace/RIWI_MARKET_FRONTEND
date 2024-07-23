@@ -15,10 +15,9 @@ import {SearchRed} from '../../components/buscador/searchInput.jsx'
 
 const Admin = ()=>{
 
+    const listAdminSee = ["id","precio","nombre"];
 
-    const listAdminSee = ["id","precio","nombre"]
-
-    const ValuesOfTable = ["1","1.20","Harol"]
+    const ValuesOfTable = ["1","1.20","Harol"];
 
 
     const [activeModal,SeActiveModal] = useState(false)
@@ -28,6 +27,10 @@ const Admin = ()=>{
     const handleOptionMenue = (option)=>{
         SetStatusMenue(option)
     }
+
+    //Logica para saber si el indiicador del modal esta activo o no esta activo
+    const [activedModalUser,SetactivedModalUser] = useState(false);
+
 
     function active(){activeModal ? SeActiveModal(false) :  SeActiveModal(true)}
 
@@ -40,7 +43,7 @@ const Admin = ()=>{
                 <NavAdmin modalActived={activeModal} option={handleOptionMenue}/>
 
                 <div className='containerSectionInfo'>
-                    <SearchRed />
+                    <SearchRed activeModal={activedModalUser}/>
                     <List filasNumber={listAdminSee} arrayValues={ValuesOfTable} />
                 </div>
                

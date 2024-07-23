@@ -24,8 +24,30 @@
 .list tbody{
     border: 1px solid rgba(0, 0, 0, 0.096);
     width: 100%;
+    transition: 0.5s ;
 }
-.fa-plus{
+.list tbody tr{
+   
+    transition: 0.5s ;
+    
+}
+
+
+.list tbody tr:hover{
+    transform: scale(1.03);
+    background-color: rgb(209, 199, 255);
+    cursor: pointer;
+}
+
+.list tbody tr:active{
+    transform: scale(1);
+}
+
+
+
+
+.fa-plus,
+.fa-check{
     transition: 0.2s ease-in-out;
     width: 30px;
     height: 30px;
@@ -43,4 +65,8 @@
 }
 .fa-plus:active{
     transform: scale(0.8);
+}
+
+.fa-check{
+ transform: scale(0.8);
 }
