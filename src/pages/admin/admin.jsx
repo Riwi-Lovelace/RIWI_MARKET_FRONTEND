@@ -7,7 +7,6 @@ import ModalAdminInfoComponent from '../../components/modals/modalAdminInfo.jsx'
 
 
 
-
 const Admin = ()=>{
 
     const [activeModal,SeActiveModal] = useState(false)
