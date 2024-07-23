@@ -1,5 +1,5 @@
 .nav-admin{
-    width: 20%;
+    width: 25%;
     height: 80vh;
     border-radius: 0px 20px 20px 0px;
     padding-top: 3.5%;
@@ -24,7 +24,7 @@
     width: 0%;
 }
 .nav-admin:focus {
-    outline: 2px solid rgba(0, 0, 0, 0); 
+    outline: none; 
     outline-offset: 1px;
         .nav-admin::after{
             display: flex;
@@ -139,6 +139,7 @@
     }
     .btn-logout .buttonsAdmin p{
         display: none;
+       
     }
 
 
