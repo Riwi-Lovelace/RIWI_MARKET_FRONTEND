@@ -7,7 +7,7 @@ export const ProductModalParam = ({ active }) => {
 
     useEffect(() => {
         SetactiveModal(active == true)
-    }, [activeModal]);
+    }, [activeModal,active]);
 
     if (activeModal) {
         return (
@@ -17,7 +17,7 @@ export const ProductModalParam = ({ active }) => {
         return (
 
             <div className="modal fade" id="userModal">
-                <h1>Modal activo</h1>
+                <h1>Modal activo shop</h1>
             </div>
         )
     }

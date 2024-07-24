@@ -74,7 +74,7 @@ const Admin = ()=>{
                     {statusMenue === "user" ? (
                          <UserModalParam active={modalsActive}/>
                      ) : statusMenue === "shop" ? (
-                        <ProductModalParam />
+                        <ProductModalParam active={modalsActive}/>
                      ) : statusMenue === "anotherCondition" ? (
                          <AnotherComponent />
                     ) : null}
