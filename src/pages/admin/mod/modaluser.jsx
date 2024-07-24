@@ -1,26 +1,25 @@
 import React, { useState, useRef, useEffect } from "react";
 
 
-export  const userModalParam = ({active})=>{
+export const UserModalParam = ({ active }) => {
 
-    const [activeModal,SetactiveModal ] = useState(false);
+    const [activeModal, SetactiveModal] = useState(false);
 
     useEffect(() => {
         SetactiveModal(active == true)
     }, [activeModal]);
 
-    if (activeModal){
-        return(
+    if (activeModal) {
+        return (
+           <div></div>
+        )
+    } else {
+        return (
+
             <div className="modal fade" id="userModal">
                 <h1>Modal activo</h1>
             </div>
         )
-    }else{
-        return(
-            <div className="modal fade" id="userModal">
-                <h1>Modal desactivado</h1>
-            </div>
-        )
     }
-   
+
 }

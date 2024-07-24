@@ -12,6 +12,10 @@ import './css/stylesAdmin.css'
 //componente de busqueda
 import {SearchRed} from '../../components/buscador/searchInput.jsx'
 
+//modal de admin user
+import {UserModalParam} from './mod/modaluser.jsx'
+// modal aadmin de shop
+import {ProductModalParam} from './mod/modalProduct.jsx'
 
 const Admin = ()=>{
 
@@ -34,6 +38,11 @@ const Admin = ()=>{
         SetStatusMenue(option)
     }
 
+    useEffect(() => {
+       
+    }, [statusMenue]);
+
+
     //Logica para leer en que estado se encuentra el componente
 
     //ModalsActive indica si los modales estan abiertos o cerrados en base a eso trabaja los modales con ese estado
@@ -44,7 +53,7 @@ const Admin = ()=>{
         console.log(modalsActive)
     }
 
-    
+ 
 
     function active(){activeModal ? SeActiveModal(false) :  SeActiveModal(true)}
 
@@ -60,8 +69,18 @@ const Admin = ()=>{
                 <div className='containerSectionInfo'>
                     <SearchRed activeModal={activedModalUser} setActiveModal={handleModalActived}/>
                     <List filasNumber={listAdminSee} arrayValues={ValuesOfTable} />
-                </div>
-               
+
+                  {/* Renderizado Condicional */}
+                    {statusMenue === "user" ? (
+                         <UserModalParam active={modalsActive}/>
+                     ) : statusMenue === "shop" ? (
+                        <ProductModalParam />
+                     ) : statusMenue === "anotherCondition" ? (
+                         <AnotherComponent />
+                    ) : null}
+
+                    
+                </div> 
             </div>
            
 
