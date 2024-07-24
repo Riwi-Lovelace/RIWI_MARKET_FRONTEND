@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import AddProduct from "../../pages/admin/components/addProduct";
 
 
 let SearchEd = "";

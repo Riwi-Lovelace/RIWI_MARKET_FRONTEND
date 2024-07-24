@@ -7,7 +7,7 @@ export const UserModalParam = ({ active }) => {
 
     useEffect(() => {
         SetactiveModal(active == true)
-    }, [activeModal]);
+    }, [activeModal, active]);
 
     if (activeModal) {
         return (
