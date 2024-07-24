@@ -1,39 +1,33 @@
-import {useState} from 'react';
-import Modal from 'react-modal';
+import { useEffect, useState } from "react";
 
-Modal.setAppElement('#root');
-function addProduct(){
-    const [modalState, setModal] = useState(false);
+function addProduct() {
 
-    function openModal(){
-      setModal(true);
-    }
+  const [modalstate, setModal] = useState([]);
 
-    function closeModal(){
-      setModal(false);
-    }
+  useEffect(() => {
+    
+  })
+  
+  return (
+    <div className="modelInformation">
+      <div className="informationRequired">
+        <span>Product title *</span>
+        <input type="text" id="productTitle" name="productTitle" />
+        <span>Description * </span>
+        <input type="text" id="description" name="description" />
+        <span>IVA *</span>
+        <input type="number" id="iva" name="iva" />
+        <span>Brand</span>
+        <select name="brands">
+          <option value="brand1">Brand 1</option>
+        </select>
 
-      return( 
-        // <Modal isOpen = {modalState} onRequestModal = {closeModal}>
-          <div className="modelInformation">
-        <div className="informationRequired">
-            <span>Product title *</span>
-            <input type="text" id="productTitle" name="productTitle"/>
-            <span>Description * </span>
-            <input type="text" id="description" name="description"/>
-            <span>IVA *</span>
-            <input type="number" id="iva" name="iva"/>
-            <span>Brand</span>
-            <select name="brands">
-                <option value="brand1">Brand 1</option>
-            </select>
-
-        </div>
-        <div className="pictureProduct">
-
-        </div>
       </div>
-    // </Modal>  
-    )
-  }
+      <div className="pictureProduct">
+
+      </div>
+    </div>
+
+  )
+}
 export default addProduct;
