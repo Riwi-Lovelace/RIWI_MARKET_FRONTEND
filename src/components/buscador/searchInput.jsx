@@ -36,6 +36,8 @@ export const SearchRed = ({activeModal,setActiveModal})=>{
 
     
     return(
+        
+    
         <div className="input-box">
         <input
           type= "text"
