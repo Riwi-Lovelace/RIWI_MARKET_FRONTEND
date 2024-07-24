@@ -1,6 +1,21 @@
+import {useState} from 'react';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 function addProduct(){
-    const newProduct = () => {
-      <div className="modelInformation">
+    const [modalState, setModal] = useState(false);
+
+    function openModal(){
+      setModal(true);
+    }
+
+    function closeModal(){
+      setModal(false);
+    }
+
+      return( 
+        // <Modal isOpen = {modalState} onRequestModal = {closeModal}>
+          <div className="modelInformation">
         <div className="informationRequired">
             <span>Product title *</span>
             <input type="text" id="productTitle" name="productTitle"/>
@@ -18,9 +33,7 @@ function addProduct(){
 
         </div>
       </div>
-    }
-
-    return newProduct;
-}
-
+    // </Modal>  
+    )
+  }
 export default addProduct;

@@ -12,6 +12,7 @@ import './css/stylesAdmin.css'
 //componente de busqueda
 import {SearchRed} from '../../components/buscador/searchInput.jsx'
 
+
 const Admin = ()=>{
 
 
@@ -41,8 +42,7 @@ const Admin = ()=>{
                 <div className='containerSectionInfo'>
                     <SearchRed />
                     <List filasNumber={listAdminSee} arrayValues={ValuesOfTable} />
-                </div>
-               
+                </div> 
             </div>
            
 
