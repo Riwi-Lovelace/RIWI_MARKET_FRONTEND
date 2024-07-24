@@ -15,6 +15,12 @@ import {SearchRed} from '../../components/buscador/searchInput.jsx'
 
 const Admin = ()=>{
 
+    
+    //Logica para saber si el indiicador del modal esta activo o no esta activo
+    const [activedModalUser,SetactivedModalUser] = useState(null);
+
+
+
     const listAdminSee = ["id","precio","nombre"];
 
     const ValuesOfTable = ["1","1.20","Harol"];
@@ -28,9 +34,17 @@ const Admin = ()=>{
         SetStatusMenue(option)
     }
 
-    //Logica para saber si el indiicador del modal esta activo o no esta activo
-    const [activedModalUser,SetactivedModalUser] = useState(false);
+    //Logica para leer en que estado se encuentra el componente
 
+    //ModalsActive indica si los modales estan abiertos o cerrados en base a eso trabaja los modales con ese estado
+    const [modalsActive,SetmodalsActive] = useState(true);
+    const handleModalActived = (status)=>{
+        SetmodalsActive(status)
+
+        console.log(modalsActive)
+    }
+
+    
 
     function active(){activeModal ? SeActiveModal(false) :  SeActiveModal(true)}
 
@@ -38,12 +52,13 @@ const Admin = ()=>{
         <div className="AdminCase">
               <button onClick={active}>Active</button>
               <h1>Admin</h1>
+
               <h4>{statusMenue}</h4>
             <div className='container'>
                 <NavAdmin modalActived={activeModal} option={handleOptionMenue}/>
 
                 <div className='containerSectionInfo'>
-                    <SearchRed activeModal={activedModalUser}/>
+                    <SearchRed activeModal={activedModalUser} setActiveModal={handleModalActived}/>
                     <List filasNumber={listAdminSee} arrayValues={ValuesOfTable} />
                 </div>
                
