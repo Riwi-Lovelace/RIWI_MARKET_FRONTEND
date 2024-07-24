@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// Style imports
+// Style imports 
 import "../../components/header/headerStyles.css";
 
 export const SearchBar = ({ isMenuOpen }) => {
