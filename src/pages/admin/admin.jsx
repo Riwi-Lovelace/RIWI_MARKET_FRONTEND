@@ -9,13 +9,17 @@ import { List } from './components/listGeneric.jsx'
 //Estilos generales del admin
 import './css/stylesAdmin.css'
 
+import '././css/addProduct.css'
+
 //componente de busqueda
 import { SearchRed } from '../../components/buscador/searchInput.jsx'
 
 //modal de admin user
 import { UserModalParam } from './mod/modaluser.jsx'
-// modal admin de shop
-import AddProduct from './components/addProduct.jsx'
+
+import { ProductModalParam } from './mod/modalProduct.jsx'
+
+
 
 
 const Admin = () => {
@@ -50,8 +54,12 @@ const Admin = () => {
     const [modalsActive, SetmodalsActive] = useState(true);
     const handleModalActived = (status) => {
         SetmodalsActive(status)
-
-        console.log(modalsActive)
+        
+        if(modalsActive){
+            document.body.classList.add('isOpen')
+        }else {
+            document.body.classList.remove('isOpen')
+        }
     }
 
 
@@ -73,11 +81,12 @@ const Admin = () => {
 
                     {/* Renderizado Condicional */}
                     {statusMenue === "user" ? (
-                        <UserModalParam active={modalsActive} />
-                    ) : statusMenue === "shop" ? (
-                        <AddProduct />
-                    ) : statusMenue === "anotherCondition" ? (
-                        <AnotherComponent />
+                         <UserModalParam active={modalsActive}/>
+                     ) : statusMenue === "shop" ? (
+                        <ProductModalParam active={modalsActive} />
+                        
+                     ) : statusMenue === "anotherCondition" ? (
+                         <AnotherComponent />
                     ) : null}
 
 
